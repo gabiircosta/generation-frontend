@@ -10,33 +10,33 @@
 
                     <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input class="form-control"  type="text" name="nome" id="nome" placeholder="Seu nome">
+                        <input [(ngModel)]='user.name' class="form-control"  type="text" name="nome" id="nome" placeholder="Seu nome">
                     </div>
 
                     <div class="form-group">
                         <label for="usuario">Usuário</label>
-                        <input class="form-control"  type="text" name="usuario" id="usuario" placeholder="Seu usuario">
+                        <input [(ngModel)]='user.user' class="form-control"  type="text" name="usuario" id="usuario" placeholder="Seu usuario">
                     </div>
 
                     <div class="form-group">
                         <label for="linkFoto">Link da foto</label>
-                        <input class="form-control"  type="text" name="linkFoto" id="linkFoto" placeholder="Link da sua foto">
+                        <input [(ngModel)]='user.photo' class="form-control"  type="text" name="linkFoto" id="linkFoto" placeholder="Link da sua foto">
                     </div>
             
                     <div class="form-group">
                         <label for="senha">Senha</label>
-                        <input class="form-control"  type="password" name="senha" id="senha" placeholder="Sua senha">
+                        <input (input)='confirmSenha($event)' class="form-control"  type="password" name="senha" id="senha" placeholder="Sua senha">
                     </div>
 
                     <div class="form-group">
                         <label for="confSenha">Confirmar Senha</label>
-                        <input class="form-control"  type="confpassword" name="confSenha" id="confSenha" placeholder="Confirme sua senha">
+                        <input [(ngModel)]='user.password' class="form-control"  type="password" name="confSenha" id="confSenha" placeholder="Confirme sua senha">
                     </div>
 
                     <div class="form-group">
                         <label for="tipo">Tipo de Usuário</label>
-                        <select class="form-control" name="tipo" id="tipo">
-                            <option>Seleione um tipo de usuário</option>
+                        <select class="form-control" name="tipo" id="tipo" (change)='tipoUser ($event)'>
+                            <option>Selecione um tipo de usuário</option>
                             <option value="normal">Normal</option>
                             <option value="admin">Administrador</option>
                         </select>
@@ -45,7 +45,7 @@
                     
                      <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-danger mr-4" routerLink='/entrar'>Cancelar</button>
-                        <button type="submit" class="btn btn-success mr-4">Cadastrar</button>
+                        <button type="submit" class="btn btn-success mr-4" (click)='cadastrar()'>Cadastrar</button>
                     </div>
                     
                     <hr class="mt-5 mb-5">
