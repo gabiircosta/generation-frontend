@@ -8,5 +8,5 @@ export class User {
     public password: string;
     public photo: string;
     public type: string;
-    public postagem: Postagem [];
+    public postagem: Postagem[];
 }
