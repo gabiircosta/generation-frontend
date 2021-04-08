@@ -60,7 +60,7 @@
             <tbody>
               
             <tr *ngFor='let temainterador of listaTemas'>
-                <th scope="row">{{temainterador.id}}</th>
+                <th>{{temainterador.id}}</th>
                 <td>{{temainterador.descricao}}</td>
                 <td class="d-flex justify-content-end">
                     <button class="btn btn-info mr-3" [routerLink]="['/tema-edit', temainterador.id]">Editar</button>
