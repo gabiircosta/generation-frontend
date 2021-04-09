@@ -26,6 +26,9 @@ export class PostagemEditComponent implements OnInit {
   ) { }
 
   ngOnInit(){
+
+    window.scroll(0,0)
+    
     if(environment.token == ''){
       /*alert ('Sua sessão expirou, faça o login novamente')*/
       this.router.navigate(['/entrar'])
@@ -56,7 +59,15 @@ export class PostagemEditComponent implements OnInit {
   }
 
   atualizar(){
+    this.tema.id = this.idTema
+    this.postagem.tema = this.tema
 
+    this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
+      this.postagem = resp
+
+      alert('Postagem atualizada com sucesso!')
+      this.router.navigate(['/inicio'])
+    })
   }
 
 }
